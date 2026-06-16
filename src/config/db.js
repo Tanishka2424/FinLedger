@@ -11,7 +11,8 @@ function connectToDB() {
         console.log("Server is Connected to MongoDB")
     })
     .catch((err) =>{
-        console.error("Error connecting to MongoDB")
+        app.use(express.json()); // Parse JSON bodies        app.use(express.json()); // Parse JSON bodies        console.error("Error connecting to MongoDB:", err && err.message ? err.message : err)
+        console.error(err)
         process.exit(1)
     })
 }
