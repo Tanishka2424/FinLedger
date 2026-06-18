@@ -184,13 +184,6 @@ async function createInitialFundsTransaction(req, res) {
         return res.status(400).json({
             message: "Invalid toAccount"
         })
-
-        console.log("REQ USER:", req.user)
-        console.log("REQ USER ID:", req.user?._id)
-
-        const accounts = await accountModel.find()
-
-        console.log("ALL ACCOUNTS:", accounts)
     }
 
     const fromUserAccount = await accountModel.findOne({
